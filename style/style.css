@@ -1,0 +1,2442 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-padding-top: 2rem;
+    transition: .3s ease;
+}
+
+:root {
+    --mainColor: #626171;
+    --bgColor: #313131;
+    --bgColorOpacity: #313131c4;
+    --orangeColor: #FF9D01;
+    --whiteColor: #FFFFFF;
+    --blackColor: #000000;
+    --blueLinkedin: #0078D4;
+    --blueFacebook: #017FDF;
+    --vertWhatsapp: #40C351;
+    --gitlabColor: #FF7043;
+    --blueTwitterColor: #12D9E3;
+    --gitHubColor: #455A64;
+    --sectionParcoursColor: #454545;
+    --backgroundCartes: #313131;
+}
+
+::selection {
+    background-color: var(--orangeColor);
+    color: var(--blackColor);
+}
+
+body {
+    background-color: var(--bgColor);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* apparitions  */
+[class*="reveal-"] {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.reveal-visible {
+    opacity: 1;
+    transform: translate(0);
+    transition: 2s cubic-bezier(.5, 0, 0, 1);
+}
+
+.reveal-2 {
+    transition-delay: .1s;
+}
+
+.reveal-3 {
+    transition-delay: .2s;
+}
+
+.reveal-4 {
+    transition-delay: .3s;
+}
+
+.reveal-5 {
+    transition-delay: .4s;
+}
+
+.reveal-6 {
+    transition-delay: .5s;
+}
+
+
+h3 {
+    text-align: center;
+    font-size: 25px;
+    color: var(--whiteColor);
+    margin-bottom: 2em;
+}
+
+.colorTexte {
+    color: var(--orangeColor);
+}
+
+
+p {
+    color: var(--whiteColor);
+}
+
+button {
+    cursor: pointer;
+    background: transparent;
+    border: 3px solid var(--orangeColor);
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+/* header  */
+.navheader {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    /* border: 1px solid orangered; */
+    top: 2%;
+    left: 0;
+    z-index: 1000;
+}
+
+.navheader .container .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1em;
+    z-index: 1000;
+    background-color: var(--bgColor);
+    box-shadow: 0 3px 6px var(--bgColor);
+    border-radius: 8px;
+}
+
+.navheader .container .row .logo h1 a {
+    color: var(--whiteColor);
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: bold;
+}
+
+.navheader .container .row .links {
+    width: 50%;
+}
+
+.navheader .container .row .links ul .linklinks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul li a {
+    color: var(--whiteColor);
+    font-size: 16px;
+    font-weight: 400;
+    position: relative;
+}
+
+ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 4px;
+    border-radius: 8px;
+    background-color: var(--orangeColor);
+    transition: .3s ease-out;
+}
+
+ul li a:hover {
+    color: var(--orangeColor);
+}
+
+ul li a:hover::after {
+    width: 70%;
+}
+
+/* custom scroll bar */
+.progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    z-index: 500;
+}
+
+.progress-bar {
+    height: 6px;
+    background: var(--orangeColor);
+    width: 0%;
+}
+
+/* icon du menu de responsive */
+.menuIcon {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5px;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    background: var(--light-color);
+    cursor: pointer;
+    z-index: 200;
+    transition: .3s;
+}
+
+.menuIcon div {
+    display: block;
+    background: var(--whiteColor);
+    height: 2px;
+    width: 25px;
+    border-radius: 38px;
+    transition: .3s;
+    z-index: 5000;
+}
+
+.move .line1 {
+    transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.move .line2 {
+    opacity: 0;
+}
+
+.move .line3 {
+    transform: rotate(45deg) translate(-5px, -5px);
+}
+
+.menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    background: var(--bgColorOpacity);
+    z-index: 106;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: .5s;
+    clip-path: circle(0% at 100% 0%);
+}
+
+.menu .navbar {
+    width: 90%;
+    margin: auto;
+    align-items: end;
+    text-align: right;
+}
+
+.menu .navbar ul li {
+    line-height: 4;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+}
+
+.menu.active {
+    clip-path: circle(144% at 100% 0%);
+}
+
+
+/* section de presentation  */
+.presentation {
+    width: 100%;
+    height: 100vh;
+    /* overflow: hidden; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.presentation::after {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 50%;
+    background: var(--orangeColor);
+    right: 0;
+    top: 0;
+    z-index: 100;
+    clip-path: polygon(100% 0%, 100% 100%, 25% 100%, 50% 0%);
+}
+
+.rowPresentation {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 70vh;
+    /* border: 1px solid white; */
+    z-index: 500;
+    position: relative;
+    padding: 0 0em 0 1em;
+}
+
+.rowPresentation .innerDescription {
+    width: 45%;
+}
+
+.innerDescription .description {
+    font-size: 30px;
+    line-height: 1.5;
+}
+
+.innerDescription .textCV {
+    font-size: 20px;
+    margin: 1em 0;
+}
+
+.buttonCV {
+    padding: 1em 2em 1em 2em;
+    color: var(--whiteColor);
+    border-radius: 8px;
+    font-size: 16px;
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+    transition: .3s ease;
+}
+
+.buttonCV::after {
+    position: absolute;
+    content: '';
+    width: 0%;
+    height: 100%;
+    left: 0;
+    inset-block-end: 0;
+    color: black;
+    z-index: 0;
+    background-color: var(--orangeColor);
+    transition: .3s ease-in-out;
+}
+
+.buttonCV:hover {
+    color: black;
+    z-index: 1;
+}
+
+.buttonCV:hover::after {
+    z-index: -1;
+    width: 100%;
+}
+
+.reseauxSociaux {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+
+.reseauxSociaux div {
+    background: transparent;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.reseauxSociaux div a {
+    color: var(--whiteColor);
+}
+
+.linkedin {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--blueLinkedin)
+}
+
+.linkedin::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 0%;
+    left: 0;
+    top: 0;
+    /* color: black; */
+    z-index: 0;
+    background-color: var(--blueLinkedin);
+    transition: .2s ease-in-out;
+}
+
+.linkedin:hover::after {
+    z-index: -1;
+    height: 100%;
+}
+
+.whatsapp {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--vertWhatsapp);
+}
+
+.whatsapp::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 0%;
+    left: 0;
+    top: 0;
+    /* color: black; */
+    z-index: 0;
+    background-color: var(--vertWhatsapp);
+    transition: .2s ease-in-out;
+}
+
+.whatsapp:hover::after {
+    z-index: -1;
+    height: 100%;
+}
+
+.facebook {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--blueFacebook);
+}
+
+.facebook::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 0%;
+    left: 0;
+    top: 0;
+    /* color: black; */
+    z-index: 0;
+    background-color: var(--blueFacebook);
+    transition: .2s ease-in-out;
+}
+
+.facebook:hover::after {
+    z-index: -1;
+    height: 100%;
+}
+
+.github {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--gitHubColor);
+}
+
+.github::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 0%;
+    left: 0;
+    top: 0;
+    /* color: black; */
+    z-index: 0;
+    background-color: var(--gitHubColor);
+    transition: .2s ease-in-out;
+}
+
+.github:hover::after {
+    z-index: -1;
+    block-size: 100%;
+}
+
+.gitlab {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--gitlabColor);
+}
+
+.gitlab::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 0%;
+    left: 0;
+    top: 0;
+    /* color: black; */
+    z-index: 0;
+    background-color: var(--gitlabColor);
+    transition: .2s ease-in-out;
+}
+
+.gitlab:hover::after {
+    z-index: -1;
+    height: 100%;
+}
+
+.twitter {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--blueTwitterColor);
+}
+
+.twitter::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 0%;
+    left: 0;
+    top: 0;
+    /* color: black; */
+    z-index: 0;
+    background-color: var(--blueTwitterColor);
+    transition: .2s ease-in-out;
+}
+
+.twitter:hover::after {
+    z-index: -1;
+    height: 100%;
+}
+
+.rowPresentation .innerImage {
+    /* background: var(--bgColor); */
+    z-index: inherit;
+    border-radius: 20px;
+    /* width: 40%; */
+}
+
+.rowPresentation .innerImage img {
+    width: 100%;
+    /* object-fit: cover; */
+    /* z-index: inherit; */
+}
+
+
+/* btn to top  */
+.btnTop {
+    position: fixed;
+    right: 4em;
+    bottom: 5em;
+    background-color: var(--orangeColor);
+    color: var(--whiteColor);
+    z-index: 500;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 0px 6px var(--orangeColor);
+    animation: moveBtnTop infinite 2s linear;
+}
+
+.btnMiddle {
+    position: absolute;
+    right: auto;
+    left: auto;
+    bottom: -3%;
+    background-color: var(--orangeColor);
+    color: var(--whiteColor);
+    z-index: 500;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 0px 6px var(--orangeColor);
+    /* animation: moveBtnTop infinite 2s linear; */
+}
+
+
+/* mon parcours  */
+
+.timeline-section {
+    background-color: var(--sectionParcoursColor);
+    min-height: 100vh;
+    padding: 4em 15px;
+}
+
+.innerTimer {
+    width: 100%;
+    background: url(../img/images/polygone.svg);
+}
+
+.timeline-items {
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.timeline-items::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background-color: var(--bgColor);
+    left: calc(50% - 1px);
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+    width: 100%;
+    position: relative;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item:nth-child(odd) {
+    padding-right: calc(50% + 30px);
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    padding-left: calc(50% + 30px);
+}
+
+.timeline-dot {
+    height: 16px;
+    width: 16px;
+    background-color: var(--orangeColor);
+    position: absolute;
+    left: calc(50% - 8px);
+    border-radius: 50%;
+    top: 10px;
+}
+
+.timeline-date {
+    font-size: 18px;
+    color: var(--orangeColor);
+    margin: 6px 0 15px;
+    font-weight: bold;
+}
+
+.timeline-content {
+    background-color: var(--backgroundCartes);
+    padding: 30px;
+    border-radius: 10px;
+    border: 3px solid var(--orangeColor);
+    cursor: pointer;
+}
+
+.timelineGauche h3,
+.timelineGauche p {
+    text-align: right;
+}
+
+.timelineDroit h3,
+.timelineDroit p {
+    text-align: left;
+}
+
+.timeline-content h3 {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0 0 10px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.timeline-content p {
+    color: white;
+    opacity: 70%;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.timeline-content .techno {
+    opacity: 100%;
+    font-weight: 600;
+    margin: 1em auto;
+}
+
+.sheaps {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    /* justify-content: space-between; */
+}
+
+.sheaps div {
+    background: var(--orangeColor);
+    border-radius: 20px;
+    padding: .3em 1.5em;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.sheaps div p {
+    color: var(--blackColor);
+    font-weight: bold;
+    opacity: 100%;
+    font-size: 12px;
+}
+
+/* responsive */
+@media(max-width: 767px) {
+    .timeline-items::before {
+        left: 7px;
+    }
+
+    .timeline-item:nth-child(odd) {
+        padding-right: 0;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        padding-left: 37px;
+    }
+
+    .timeline-dot {
+        left: 0;
+    }
+}
+
+
+@keyframes moveBtnTop {
+    0% {
+        bottom: 5em;
+    }
+
+    50% {
+        bottom: 4em;
+    }
+
+    100% {
+        bottom: 5em;
+    }
+}
+
+
+/* competences  */
+
+
+.competences {
+    padding: 4em auto;
+}
+
+.competences .rowCompetences {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 3em;
+    padding-bottom: 3em;
+}
+
+.innerblocCompetence {
+    padding: 1em;
+    text-align: left;
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: .3s ease;
+}
+
+.innerblocCompetence:hover {
+    transform: translateY(-1em);
+    filter: grayscale(0%);
+}
+
+.innerBlocLogo {
+    width: 50px;
+    height: 50px;
+    position: relative;
+}
+
+.innerBlocLogo img {
+    width: 100%;
+}
+
+.innerBlocNom {
+    color: var(--whiteColor);
+    font-weight: bold;
+    margin: 1em auto;
+    text-transform: uppercase;
+}
+
+.innerBlocProgress {
+    background-color: var(--whiteColor);
+    width: 100%;
+    height: 12px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.html {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #FF5722;
+}
+
+.html .progressHtml .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #FF5722;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.html .progressHtml .progressInside {
+    width: 99%;
+    color: var(--blackColor);
+}
+
+.css {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #2196F3;
+}
+
+.css .progressCSS .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #2196F3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.css .progressCSS .progressInside {
+    width: 99%;
+    color: var(--blackColor);
+}
+
+.js {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #F7DF1E;
+}
+
+.js .progressJs .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #F7DF1E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.js .progressJs .progressInside {
+    width: 90%;
+    color: var(--blackColor);
+}
+
+.sass {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #CF649A;
+}
+
+.sass .progressSass .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #CF649A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.sass .progressSass .progressInside {
+    width: 99%;
+    color: var(--blackColor);
+}
+
+.ts {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #3178C6;
+}
+
+.ts .progressTs .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #3178C6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.ts .progressTs .progressInside {
+    width: 90%;
+    color: var(--blackColor);
+}
+
+.java {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #EA2D2E;
+}
+
+.java .progressJava .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #EA2D2E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.java .progressJava .progressInside {
+    width: 60%;
+    color: var(--blackColor);
+}
+
+.python {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #FFCB3C;
+}
+
+.python .progressPython .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #FFCB3C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.python .progressPython .progressInside {
+    width: 58%;
+    color: var(--blackColor);
+}
+
+.php {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #6574AB;
+}
+
+.php .progressPhp .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #6574AB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.php .progressPhp .progressInside {
+    width: 80%;
+    color: var(--blackColor);
+}
+
+.bootstrap {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #563D7C;
+}
+
+.bootstrap .progressBoot .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #563D7C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.bootstrap .progressBoot .progressInside {
+    width: 95%;
+    color: var(--blackColor);
+}
+
+.nodeJs {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #539E43;
+}
+
+.nodeJs .progressNodeJs .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #539E43;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.nodeJs .progressNodeJs .progressInside {
+    width: 95%;
+    color: var(--blackColor);
+}
+
+.react {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #06c2f1;
+}
+
+.react .progressreact .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #06c2f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.react .progressreact .progressInside {
+    width: 50%;
+    color: var(--blackColor);
+}
+
+.angular {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #DD0031;
+}
+
+.angular .progressAng .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #DD0031;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.angular .progressAng .progressInside {
+    width: 95%;
+    color: var(--blackColor);
+}
+
+
+.spring {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #6CB33D;
+}
+
+.spring .progressSpring .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #6CB33D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.spring .progressSpring .progressInside {
+    width: 69%;
+    color: var(--blackColor);
+}
+
+.docker {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #086dd7;
+}
+
+.docker .progressDocker .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #086dd7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.docker .progressDocker .progressInside {
+    width: 72%;
+    color: var(--blackColor);
+}
+
+.igniter {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #ee4323;
+}
+
+.igniter .progressCode .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #ee4323;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.igniter .progressCode .progressInside {
+    width: 28%;
+    color: var(--blackColor);
+}
+
+.adobe {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #470137;
+}
+
+.adobe .progressAdobe .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #470137;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.adobe .progressAdobe .progressInside {
+    width: 97%;
+    color: var(--whiteColor);
+}
+
+.figma {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #a259ff;
+}
+
+.figma .progressFigma .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #a259ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.figma .progressFigma .progressInside {
+    width: 97%;
+    color: var(--blackColor);
+}
+
+.symp {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid var(--blackColor);
+}
+
+.symp .progressSymp .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: var(--blackColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.symp .progressSymp .progressInside {
+    width: 23%;
+    color: var(--whiteColor);
+}
+
+.graphql {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #e435aa;
+}
+
+.graphql .progressGraphql .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #e435aa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.graphql .progressGraphql .progressInside {
+    width: 46%;
+    color: var(--whiteColor);
+}
+.sql {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #005e86;
+}
+
+.sql .progressSql .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #005e86;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.sql .progressSql .progressInside {
+    width: 92%;
+    color: var(--whiteColor);
+}
+
+.c {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #00599d;
+}
+
+.c .progressC .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #00599d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.c .progressC .progressInside {
+    width: 50%;
+    color: var(--whiteColor);
+}
+
+.uml {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #971f42;
+}
+
+.uml .progressUml .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #971f42;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.uml .progressUml .progressInside {
+    width: 96%;
+    color: var(--blackColor);
+}
+
+.trello {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #0079bf;
+}
+
+.trello .progressTrello .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #0079bf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.trello .progressTrello .progressInside {
+    width: 80%;
+    color: var(--blackColor);
+}
+
+.scra {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #faa31c;
+}
+
+.scra .progressScratch .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #faa31c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.scra .progressScratch .progressInside {
+    width: 15%;
+    color: var(--blackColor);
+}
+
+.ionic {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #1c6cff;
+}
+
+.ionic .progressIonic .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #1c6cff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.ionic .progressIonic .progressInside {
+    width: 88%;
+    color: var(--blackColor);
+}
+
+.flutter {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #12a3df;
+}
+
+.flutter .progressFlutter .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #12a3df;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.flutter .progressFlutter .progressInside {
+    width: 35%;
+    color: var(--blackColor);
+}
+
+.gant {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #ffbe00;
+}
+
+.gant .progressGant .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #ffbe00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.gant .progressGant .progressInside {
+    width: 90%;
+    color: var(--blackColor);
+}
+.jira {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #1570eb;
+}
+
+.jira .progressJira .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #1570eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.jira .progressJira .progressInside {
+    width: 95%;
+    color: var(--blackColor);
+}
+
+.wordpress {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #21759a;
+}
+
+.wordpress .progressScratch .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #21759a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.wordpress .progressScratch .progressInside {
+    width: 95%;
+    color: var(--blackColor);
+}
+
+.prestashop {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #7ca6b1;
+}
+
+.prestashop .progressScratch .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #7ca6b1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.prestashop .progressScratch .progressInside {
+    width: 80%;
+    color: var(--blackColor);
+}
+
+.laravel {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #cf2b20;
+}
+
+.laravel .progressScratch .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #cf2b20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.laravel .progressScratch .progressInside {
+    width: 40%;
+    color: var(--whiteColor);
+}
+
+.git {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #f05133;
+}
+
+.git .progressScratch .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #f05133;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.git .progressScratch .progressInside {
+    width: 90%;
+    color: var(--blackColor);
+}
+
+.linux {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #bd9108;
+}
+
+.linux .progressScratch .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #bd9108;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.linux .progressScratch .progressInside {
+    width: 60%;
+    color: var(--blackColor);
+}
+
+.filezilla {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #c00000;
+}
+
+.filezilla .progressScratch .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #c00000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.filezilla .progressScratch .progressInside {
+    width: 88%;
+    color: var(--blackColor);
+}
+
+.word {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #1e447d;
+}
+
+.word .progressScratch .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #1e447d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.word .progressScratch .progressInside {
+    width: 95%;
+    color: var(--blackColor);
+}
+
+.excel {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #197242;
+}
+
+.excel .progressScratch .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #197242;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.excel .progressScratch .progressInside {
+    width: 80%;
+    color: var(--blackColor);
+}
+
+.powerpoint {
+    width: 20%;
+    border-radius: 10px;
+    border: 3px solid #d14524;
+}
+
+.powerpoint .progressScratch .progressInside {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    text-align: center;
+    background-color: #d14524;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    transition: .5s ease;
+}
+
+.innerblocCompetence:hover.powerpoint .progressScratch .progressInside {
+    width: 60%;
+    color: var(--blackColor);
+}
+
+@media (max-width: 800px) {
+    .innerblocCompetence {
+        inline-size: 30% !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .innerblocCompetence {
+        inline-size: 100% !important;
+        padding: auto 1em;
+    }
+}
+
+.realisations {
+    inline-size: 100%;
+    block-size: auto;
+}
+
+.realisation-header {
+    padding-block-start: 2em;
+    padding-block-end: 2em;
+    background-color: var(--sectionParcoursColor);
+}
+
+.buttonFiltres {
+    display: flex;
+    justify-content: center;
+    inline-size: 100%;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.buttonFiltres .buttonCV {
+    font-size: 12px;
+}
+
+
+.header-body {
+    inline-size: 100%;
+    block-size: auto;
+    padding: 2em;
+    background: url(../img/images/bgRealisation.svg);
+    position: relative;
+}
+
+.header-body::after {
+    content: '';
+    position: absolute;
+    inline-size: 100%;
+    block-size: 100%;
+    background-color: var(--bgColorOpacity);
+    inset-block-start: 0;
+    inset-inline-start: 0;
+}
+
+.header-body .container .rowRealisations {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    inline-size: 100%;
+    block-size: auto;
+    gap: 3em;
+}
+
+.header-body .container .rowRealisations .rowRealisations-item {
+    inline-size: 30%;
+    block-size: 350px;
+    position: relative;
+    z-index: 100;
+}
+
+.captureOneflex {
+    inline-size: 100%;
+    block-size: 100%;
+    border-radius: 10px;
+    background: url(../img/images/captures/oneflex.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.capture {
+    inline-size: 100%;
+    block-size: 100%;
+    border-radius: 10px;
+    background: url(../img/images/captures/helpdeskHome.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.captureDardo {
+    inline-size: 100%;
+    block-size: 100%;
+    border-radius: 10px;
+    background: url(../img/images/captures/dardotechs.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.captureMadj {
+    inline-size: 100%;
+    block-size: 100%;
+    border-radius: 10px;
+    background: url(../img/images/captures/madjGame.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.captureQuizz {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: url(../img/images/captures/quizz.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.captureMichel {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: url(../img/images/captures/michelado.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.capturecos {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: url(../img/images/captures/designCosmetique.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.paraine {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: url(../img/images/captures/parrainage.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.plat {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: url(../img/images/captures/platine.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.game {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: url(../img/images/captures/gamingZone.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.landing {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: url(../img/images/captures/landingPage.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.giannny {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: url(../img/images/captures/gianny.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.informationCapture {
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: 0;
+    bottom: auto;
+    width: 100%;
+    height: 0%;
+    background-color: var(--bgColorOpacity);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    text-align: center;
+    overflow: hidden;
+    z-index: 100;
+    /* display: none; */
+}
+
+.informationCapture h4 {
+    font-size: 20px;
+    color: var(--whiteColor);
+    text-transform: uppercase;
+}
+
+.informationCapture p {
+    font-size: 16px;
+    opacity: .7;
+}
+
+.informationCapture a {
+    color: var(--whiteColor);
+    text-decoration: underline;
+}
+
+.rowRealisations-item:hover .informationCapture {
+    height: 100%;
+    z-index: 1000;
+}
+
+.rowRealisations-item {
+    display: none;
+    transition: .3s ease;
+}
+
+.rowRealisations-item.show {
+    display: block;
+    transition: .3s ease;
+}
+
+.filter.active {
+    background-color: var(--orangeColor);
+    /* Couleur de surbrillance */
+    color: var(--blackColor);
+}
+
+
+
+
+/* references  */
+.references {
+    width: 100%;
+    height: auto;
+    background-color: var(--sectionParcoursColor);
+}
+
+.innerReferences {
+    width: 100%;
+    height: 100%;
+    background: url(../img/images/polygone.svg);
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+.innerReferences .container h3 {
+    margin-bottom: 3em;
+}
+
+.referencesCards {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1em;
+    width: 100%;
+}
+
+.card {
+    width: 20%;
+    border: 3px solid var(--orangeColor);
+    border-radius: 10px;
+    height: auto;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    filter: grayscale(100%);
+    background-color: var(--bgColor);
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.card:hover {
+    filter: grayscale(0);
+    transform: translateY(-1em);
+}
+
+.card .imageUser {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 8px;
+    display: none;
+}
+
+.card .imageUser img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card .infosUsers p {
+    line-height: 2;
+}
+
+
+
+/* contact  */
+.contact {
+    width: 100%;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    height: auto;
+    background: var(--bgColor);
+}
+
+.innerContact {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+form {
+    width: 40%;
+    height: auto;
+    border: 3px solid var(--orangeColor);
+    border-radius: 8px;
+    padding: 1em;
+}
+
+@media (max-width: 1000px) {
+    form {
+        width: 50%;
+    }
+
+    .infoPersonnelle {
+        width: 50%;
+    }
+
+    .innerDescription .reseauxSociaux {
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .innerContact {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .infoPersonnelle {
+        width: 100% !important;
+    }
+
+    .innerDescription .reseauxSociaux {
+        width: 50%;
+    }
+}
+
+.input-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rowForm {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-group input {
+    width: 45%;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+}
+
+input,
+textarea {
+    margin: 1em;
+}
+
+.rowForm input {
+    margin: 1em 0em;
+}
+
+.email,
+.objet,
+textarea,
+.btnSubmit {
+    width: 100% !important;
+}
+
+textarea {
+    padding: 1em;
+    background: var(--sectionParcoursColor);
+}
+
+.btnSubmit {
+    background: var(--orangeColor);
+    color: var(--blackColor);
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btnSubmit.loading {
+    position: relative;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.btnSubmit.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.inputBorder {
+    border: 3px solid var(--orangeColor);
+    border-radius: 8px;
+    background-color: transparent;
+    outline: none;
+    color: var(--whiteColor);
+}
+
+.infoPersonnelle {
+    text-align: left;
+    width: 40%;
+}
+
+.infoPersonnelle h4 {
+    font-size: 2em;
+    color: var(--orangeColor);
+}
+
+.certifications{
+    margin-top: 1.5em;
+}
+
+.certifications ul li{
+    list-style-type: circle;
+    color: var(--whiteColor);
+}
+
+
+/* footer  */
+.footer {
+    width: 100%;
+    background-color: var(--sectionParcoursColor);
+    height: auto;
+    padding: 2em auto;
+}
+
+.innerFooter {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 0;
+}
+
+
+/* responsive  */
+
+@media (max-width: 1600px) {
+    .reseauxSociaux {
+        width: 60%;
+    }
+}
+
+@media (max-width: 1300px) {
+    .reseauxSociaux {
+        width: 75%;
+    }
+}
+
+@media (max-width: 1100px) {
+    .header-body .container .rowRealisations .rowRealisations-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .navheader .container .row .links {
+        width: 70%;
+    }
+
+    .description {
+        font-size: 25px;
+    }
+
+    .innerDescription {
+        width: 100%;
+    }
+
+    .card {
+        width: 30%;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .card {
+        width: 50%;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .card {
+        width: 80%;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .navheader .container .row .links {
+        width: 80%;
+    }
+
+    .rowPresentation {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .innerDescription {
+        width: 100% !important;
+    }
+
+    .innerImage {
+        display: none;
+    }
+
+    .reseauxSociaux {
+        width: 50%;
+    }
+}
+
+@media (max-width: 800px) {
+    .navheader .container .row .links ul .linklinks {
+        display: none;
+    }
+
+    .navheader .container .row .links ul {
+        float: right;
+        width: auto;
+    }
+
+    .navheader .container .row .links .linklinks {
+        display: none;
+    }
+
+    .menuIcon {
+        border: 2px solid white;
+        display: flex;
+        float: right;
+    }
+}
+
+@media (max-width: 800px) {
+    .reseauxSociaux {
+        width: 70%;
+    }
+}
+
+@media (max-width: 500px) {
+    /* .innerDescription { */
+    /* border: 3px solid red; */
+    /* } */
+
+    .innerDescription .description {
+        font-size: 15px;
+    }
+
+    .innerDescription .textCV {
+        font-size: 15px;
+    }
+
+    .innerImage {
+        display: block;
+    }
+
+    .reseauxSociaux {
+        width: 100% !important;
+    }
+
+    .reseauxSociaux div {
+        width: 40px;
+        height: 40px;
+    }
+
+    .buttonCV {
+        font-size: 10px;
+    }
+
+    .rowPresentation .innerImage {
+        /* width: 40%; */
+        height: 450px !important;
+        width: 100% !important;
+        margin-top: 1em;
+        display: none;
+    }
+
+    .rowPresentation .innerImage img {
+        height: 100%;
+        object-fit: cover;
+    }
+}
