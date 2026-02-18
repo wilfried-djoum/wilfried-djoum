@@ -1771,7 +1771,7 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.powerpoint .progressScratch .progressInside {
-    width: 60%;
+    inline-size: 60%;
     color: var(--blackColor);
 }
 
@@ -1845,6 +1845,42 @@ ul li a:hover::after {
     block-size: 350px;
     position: relative;
     z-index: 100;
+}
+
+.captureJeanbrun {
+    inline-size: 100%;
+    block-size: 100%;
+    border-radius: 10px;
+    background: url(../img/images/captures/jeanbrun.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.captureCalculateur {
+    inline-size: 100%;
+    block-size: 100%;
+    border-radius: 10px;
+    background: url(../img/images/captures/calculateur.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.captureEligibilite {
+    inline-size: 100%;
+    block-size: 100%;
+    border-radius: 10px;
+    background: url(../img/images/captures/eligibilite.png) center no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .3s ease;
 }
 
 .captureInfra {
