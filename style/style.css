@@ -1523,8 +1523,8 @@ ul li a:hover::after {
 
 .jira .progressJira .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #1570eb;
     display: flex;
@@ -1537,20 +1537,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.jira .progressJira .progressInside {
-    width: 95%;
+    inline-size: 95%;
     color: var(--blackColor);
 }
 
 .wordpress {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #21759a;
 }
 
 .wordpress .progressScratch .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #21759a;
     display: flex;
@@ -1563,20 +1563,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.wordpress .progressScratch .progressInside {
-    width: 95%;
+    inline-size: 95%;
     color: var(--blackColor);
 }
 
 .prestashop {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #7ca6b1;
 }
 
 .prestashop .progressScratch .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #7ca6b1;
     display: flex;
@@ -1589,20 +1589,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.prestashop .progressScratch .progressInside {
-    width: 80%;
+    inline-size: 80%;
     color: var(--blackColor);
 }
 
 .laravel {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #cf2b20;
 }
 
 .laravel .progressScratch .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #cf2b20;
     display: flex;
@@ -1615,20 +1615,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.laravel .progressScratch .progressInside {
-    width: 40%;
+    inline-size: 40%;
     color: var(--whiteColor);
 }
 
 .git {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #f05133;
 }
 
 .git .progressScratch .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #f05133;
     display: flex;
@@ -1641,20 +1641,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.git .progressScratch .progressInside {
-    width: 90%;
+    inline-size: 90%;
     color: var(--blackColor);
 }
 
 .linux {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #bd9108;
 }
 
 .linux .progressScratch .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #bd9108;
     display: flex;
@@ -1667,20 +1667,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.linux .progressScratch .progressInside {
-    width: 60%;
+    inline-size: 60%;
     color: var(--blackColor);
 }
 
 .filezilla {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #c00000;
 }
 
 .filezilla .progressScratch .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #c00000;
     display: flex;
@@ -1693,20 +1693,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.filezilla .progressScratch .progressInside {
-    width: 88%;
+    inline-size: 88%;
     color: var(--blackColor);
 }
 
 .word {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #1e447d;
 }
 
 .word .progressScratch .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #1e447d;
     display: flex;
@@ -1719,20 +1719,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.word .progressScratch .progressInside {
-    width: 95%;
+    inline-size: 95%;
     color: var(--blackColor);
 }
 
 .excel {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #197242;
 }
 
 .excel .progressScratch .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #197242;
     display: flex;
@@ -1745,20 +1745,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.excel .progressScratch .progressInside {
-    width: 80%;
+    inline-size: 80%;
     color: var(--blackColor);
 }
 
 .powerpoint {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #d14524;
 }
 
 .powerpoint .progressScratch .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #d14524;
     display: flex;
