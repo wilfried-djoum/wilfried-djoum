@@ -610,12 +610,12 @@ ul li a:hover::after {
 }
 
 .timeline-item:nth-child(odd) {
-    padding-right: calc(50% + 30px);
-    text-align: right;
+    padding-inline-end: calc(50% + 30px);
+    text-align: end;
 }
 
 .timeline-item:nth-child(even) {
-    padding-left: calc(50% + 30px);
+    padding-inline-start: calc(50% + 30px);
 }
 
 .timeline-dot {
@@ -623,9 +623,9 @@ ul li a:hover::after {
     inline-size: 16px;
     background-color: var(--orangeColor);
     position: absolute;
-    left: calc(50% - 8px);
+    inset-inline-start: calc(50% - 8px);
     border-radius: 50%;
-    top: 10px;
+    inset-block-start: 10px;
 }
 
 .timeline-date {
@@ -645,12 +645,12 @@ ul li a:hover::after {
 
 .timelineGauche h3,
 .timelineGauche p {
-    text-align: right;
+    text-align: end;
 }
 
 .timelineDroit h3,
 .timelineDroit p {
-    text-align: left;
+    text-align: inset-inline-start;
 }
 
 .timeline-content h3 {
@@ -701,36 +701,36 @@ ul li a:hover::after {
 /* responsive */
 @media(max-inline-size: 767px) {
     .timeline-items::before {
-        left: 7px;
+        inset-inline-start: 7px;
     }
 
     .timeline-item:nth-child(odd) {
-        padding-right: 0;
-        text-align: left;
+        padding-inline-end: 0;
+        text-align: inset-inline-start;
     }
 
     .timeline-item:nth-child(odd),
     .timeline-item:nth-child(even) {
-        padding-left: 37px;
+        padding-inline-start: 37px;
     }
 
     .timeline-dot {
-        left: 0;
+        inset-inline-start: 0;
     }
 }
 
 
 @keyframes moveBtnTop {
     0% {
-        bottom: 5em;
+        inset-block-end: 5em;
     }
 
     50% {
-        bottom: 4em;
+        inset-block-end: 4em;
     }
 
     100% {
-        bottom: 5em;
+        inset-block-end: 5em;
     }
 }
 
@@ -749,12 +749,12 @@ ul li a:hover::after {
     flex-wrap: wrap;
     justify-content: space-around;
     gap: 3em;
-    padding-bottom: 3em;
+    padding-block-end: 3em;
 }
 
 .innerblocCompetence {
     padding: 1em;
-    text-align: left;
+    text-align: inset-inline-start;
     cursor: pointer;
     filter: grayscale(100%);
     transition: .3s ease;
@@ -2053,10 +2053,10 @@ ul li a:hover::after {
 
 .informationCapture {
     position: absolute;
-    top: 0;
-    left: auto;
-    right: 0;
-    bottom: auto;
+    inset-block-start: 0;
+    inset-inline-start: auto;
+    inset-inline-end: 0;
+    inset-block-end: auto;
     inline-size: 100%;
     block-size: 0%;
     background-color: var(--bgColorOpacity);
@@ -2067,8 +2067,8 @@ ul li a:hover::after {
     align-items: center;
     justify-content: center;
     gap: 2em;
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-inline-start: 2em;
+    padding-inline-end: 2em;
     text-align: center;
     overflow: hidden;
     z-index: 100;
@@ -2126,8 +2126,8 @@ ul li a:hover::after {
     inline-size: 100%;
     block-size: 100%;
     background: url(../img/images/polygone.svg);
-    padding-top: 3em;
-    padding-bottom: 3em;
+    padding-block-start: 3em;
+    padding-block-end: 3em;
 }
 
 .innerReferences .container h3 {
@@ -2187,8 +2187,8 @@ ul li a:hover::after {
 /* contact  */
 .contact {
     inline-size: 100%;
-    padding-top: 3em;
-    padding-bottom: 3em;
+    padding-block-start: 3em;
+    padding-block-end: 3em;
     block-size: auto;
     background: var(--bgColor);
 }
@@ -2259,9 +2259,9 @@ form {
 
 .input-group input {
     inline-size: 45%;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    padding-left: 1em;
+    padding-block-start: 1em;
+    padding-block-end: 1em;
+    padding-inline-start: 1em;
 }
 
 input,
@@ -2304,14 +2304,14 @@ textarea {
 .btnSubmit.loading::after {
     content: "";
     position: absolute;
-    top: 50%;
-    left: 50%;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
     inline-size: 20px;
     block-size: 20px;
-    margin-top: -10px;
-    margin-left: -10px;
+    margin-block-start: -10px;
+    margin-inline-start: -10px;
     border: 2px solid rgba(255, 255, 255, 0.6);
-    border-top-color: #fff;
+    border-block-start-color: #fff;
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
 }
@@ -2336,7 +2336,7 @@ textarea {
 }
 
 .infoPersonnelle {
-    text-align: left;
+    text-align: inset-inline-start;
     inline-size: 40%;
 }
 
@@ -2346,7 +2346,7 @@ textarea {
 }
 
 .certifications {
-    margin-top: 1.5em;
+    margin-block-start: 1.5em;
 }
 
 .certifications ul li {
@@ -2460,7 +2460,7 @@ textarea {
     }
 
     .navheader .container .row .links ul {
-        float: right;
+        float: inset-inline-end;
         inline-size: auto;
     }
 
@@ -2514,7 +2514,7 @@ textarea {
     .rowPresentation .innerImage {
         block-size: 450px !important;
         inline-size: 100% !important;
-        margin-top: 1em;
+        margin-block-start: 1em;
         display: none;
     }
 
