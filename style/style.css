@@ -381,10 +381,10 @@ ul li a:hover::after {
 .linkedin::after {
     position: absolute;
     content: '';
-    width: 100%;
-    height: 0%;
-    left: 0;
-    top: 0;
+    inline-size: 100%;
+    block-size: 0%;
+    inset-inline-start: 0;
+    inset-block-start: 0;
     /* color: black; */
     z-index: 0;
     background-color: var(--blueLinkedin);
@@ -393,7 +393,7 @@ ul li a:hover::after {
 
 .linkedin:hover::after {
     z-index: -1;
-    height: 100%;
+    block-size: 100%;
 }
 
 .whatsapp {
@@ -405,10 +405,10 @@ ul li a:hover::after {
 .whatsapp::after {
     position: absolute;
     content: '';
-    width: 100%;
-    height: 0%;
-    left: 0;
-    top: 0;
+    inline-size: 100%;
+    block-size: 0%;
+    inset-inline-start: 0;
+    inset-block-start: 0;
     /* color: black; */
     z-index: 0;
     background-color: var(--vertWhatsapp);
@@ -417,7 +417,7 @@ ul li a:hover::after {
 
 .whatsapp:hover::after {
     z-index: -1;
-    height: 100%;
+    block-size: 100%;
 }
 
 .facebook {
@@ -429,10 +429,10 @@ ul li a:hover::after {
 .facebook::after {
     position: absolute;
     content: '';
-    width: 100%;
-    height: 0%;
-    left: 0;
-    top: 0;
+    inline-size: 100%;
+    block-size: 0%;
+    inset-inline-start: 0;
+    inset-block-start: 0;
     /* color: black; */
     z-index: 0;
     background-color: var(--blueFacebook);
@@ -441,7 +441,7 @@ ul li a:hover::after {
 
 .facebook:hover::after {
     z-index: -1;
-    height: 100%;
+    block-size: 100%;
 }
 
 .github {
@@ -453,10 +453,10 @@ ul li a:hover::after {
 .github::after {
     position: absolute;
     content: '';
-    width: 100%;
-    height: 0%;
-    left: 0;
-    top: 0;
+    inline-size: 100%;
+    block-size: 0%;
+    inset-inline-start: 0;
+    inset-block-start: 0;
     /* color: black; */
     z-index: 0;
     background-color: var(--gitHubColor);
@@ -477,10 +477,10 @@ ul li a:hover::after {
 .gitlab::after {
     position: absolute;
     content: '';
-    width: 100%;
-    height: 0%;
-    left: 0;
-    top: 0;
+    inline-size: 100%;
+    block-size: 0%;
+    inset-inline-start: 0;
+    inset-block-start: 0;
     /* color: black; */
     z-index: 0;
     background-color: var(--gitlabColor);
@@ -489,7 +489,7 @@ ul li a:hover::after {
 
 .gitlab:hover::after {
     z-index: -1;
-    height: 100%;
+    block-size: 100%;
 }
 
 .twitter {
@@ -501,10 +501,10 @@ ul li a:hover::after {
 .twitter::after {
     position: absolute;
     content: '';
-    width: 100%;
-    height: 0%;
-    left: 0;
-    top: 0;
+    inline-size: 100%;
+    block-size: 0%;
+    inset-inline-start: 0;
+    inset-block-start: 0;
     /* color: black; */
     z-index: 0;
     background-color: var(--blueTwitterColor);
@@ -513,18 +513,18 @@ ul li a:hover::after {
 
 .twitter:hover::after {
     z-index: -1;
-    height: 100%;
+    block-size: 100%;
 }
 
 .rowPresentation .innerImage {
     /* background: var(--bgColor); */
     z-index: inherit;
     border-radius: 20px;
-    /* width: 40%; */
+    /* inline-size: 40%; */
 }
 
 .rowPresentation .innerImage img {
-    width: 100%;
+    inline-size: 100%;
     /* object-fit: cover; */
     /* z-index: inherit; */
 }
@@ -533,13 +533,13 @@ ul li a:hover::after {
 /* btn to top  */
 .btnTop {
     position: fixed;
-    right: 4em;
-    bottom: 5em;
+    inset-inline-end: 4em;
+    inset-block-end: 5em;
     background-color: var(--orangeColor);
     color: var(--whiteColor);
     z-index: 500;
-    width: 50px;
-    height: 50px;
+    inline-size: 50px;
+    block-size: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -551,14 +551,14 @@ ul li a:hover::after {
 
 .btnMiddle {
     position: absolute;
-    right: auto;
-    left: auto;
-    bottom: -3%;
+    inset-inline-end: auto;
+    inset-inline-start: auto;
+    inset-block-end: -3%;
     background-color: var(--orangeColor);
     color: var(--whiteColor);
     z-index: 500;
-    width: 50px;
-    height: 50px;
+    inline-size: 50px;
+    block-size: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -573,17 +573,17 @@ ul li a:hover::after {
 
 .timeline-section {
     background-color: var(--sectionParcoursColor);
-    min-height: 100vh;
+    min-block-size: 100vh;
     padding: 4em 15px;
 }
 
 .innerTimer {
-    width: 100%;
+    inline-size: 100%;
     background: url(../img/images/polygone.svg);
 }
 
 .timeline-items {
-    max-width: 80%;
+    max-inline-size: 80%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -593,20 +593,20 @@ ul li a:hover::after {
 .timeline-items::before {
     content: '';
     position: absolute;
-    width: 2px;
-    height: 100%;
+    inline-size: 2px;
+    block-size: 100%;
     background-color: var(--bgColor);
-    left: calc(50% - 1px);
+    inset-inline-start: calc(50% - 1px);
 }
 
 .timeline-item {
-    margin-bottom: 40px;
-    width: 100%;
+    margin-block-end: 40px;
+    inline-size: 100%;
     position: relative;
 }
 
 .timeline-item:last-child {
-    margin-bottom: 0;
+    margin-block-end: 0;
 }
 
 .timeline-item:nth-child(odd) {
@@ -619,8 +619,8 @@ ul li a:hover::after {
 }
 
 .timeline-dot {
-    height: 16px;
-    width: 16px;
+    block-size: 16px;
+    inline-size: 16px;
     background-color: var(--orangeColor);
     position: absolute;
     left: calc(50% - 8px);
@@ -676,7 +676,7 @@ ul li a:hover::after {
 }
 
 .sheaps {
-    width: 100%;
+    inline-size: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: start;
@@ -699,7 +699,7 @@ ul li a:hover::after {
 }
 
 /* responsive */
-@media(max-width: 767px) {
+@media(max-inline-size: 767px) {
     .timeline-items::before {
         left: 7px;
     }
@@ -743,7 +743,7 @@ ul li a:hover::after {
 }
 
 .competences .rowCompetences {
-    width: 100%;
+    inline-size: 100%;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -766,13 +766,13 @@ ul li a:hover::after {
 }
 
 .innerBlocLogo {
-    width: 50px;
-    height: 50px;
+    inline-size: 50px;
+    block-size: 50px;
     position: relative;
 }
 
 .innerBlocLogo img {
-    width: 100%;
+    inline-size: 100%;
 }
 
 .innerBlocNom {
@@ -784,23 +784,23 @@ ul li a:hover::after {
 
 .innerBlocProgress {
     background-color: var(--whiteColor);
-    width: 100%;
-    height: 12px;
+    inline-size: 100%;
+    block-size: 12px;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
 }
 
 .html {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #FF5722;
 }
 
 .html .progressHtml .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #FF5722;
     display: flex;
@@ -813,20 +813,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.html .progressHtml .progressInside {
-    width: 99%;
+    inline-size: 99%;
     color: var(--blackColor);
 }
 
 .css {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #2196F3;
 }
 
 .css .progressCSS .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #2196F3;
     display: flex;
@@ -839,20 +839,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.css .progressCSS .progressInside {
-    width: 99%;
+    inline-size: 99%;
     color: var(--blackColor);
 }
 
 .js {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #F7DF1E;
 }
 
 .js .progressJs .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #F7DF1E;
     display: flex;
@@ -865,20 +865,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.js .progressJs .progressInside {
-    width: 90%;
+    inline-size: 90%;
     color: var(--blackColor);
 }
 
 .sass {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #CF649A;
 }
 
 .sass .progressSass .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #CF649A;
     display: flex;
@@ -891,20 +891,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.sass .progressSass .progressInside {
-    width: 99%;
+    inline-size: 99%;
     color: var(--blackColor);
 }
 
 .ts {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #3178C6;
 }
 
 .ts .progressTs .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #3178C6;
     display: flex;
@@ -917,20 +917,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.ts .progressTs .progressInside {
-    width: 90%;
+    inline-size: 90%;
     color: var(--blackColor);
 }
 
 .java {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #EA2D2E;
 }
 
 .java .progressJava .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #EA2D2E;
     display: flex;
@@ -943,20 +943,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.java .progressJava .progressInside {
-    width: 60%;
+    inline-size: 60%;
     color: var(--blackColor);
 }
 
 .python {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #FFCB3C;
 }
 
 .python .progressPython .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #FFCB3C;
     display: flex;
@@ -969,20 +969,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.python .progressPython .progressInside {
-    width: 58%;
+    inline-size: 58%;
     color: var(--blackColor);
 }
 
 .php {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #6574AB;
 }
 
 .php .progressPhp .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #6574AB;
     display: flex;
@@ -995,20 +995,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.php .progressPhp .progressInside {
-    width: 80%;
+    inline-size: 80%;
     color: var(--blackColor);
 }
 
 .bootstrap {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #563D7C;
 }
 
 .bootstrap .progressBoot .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #563D7C;
     display: flex;
@@ -1021,20 +1021,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.bootstrap .progressBoot .progressInside {
-    width: 95%;
+    inline-size: 95%;
     color: var(--blackColor);
 }
 
 .nodeJs {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #539E43;
 }
 
 .nodeJs .progressNodeJs .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #539E43;
     display: flex;
@@ -1047,20 +1047,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.nodeJs .progressNodeJs .progressInside {
-    width: 95%;
+    inline-size: 95%;
     color: var(--blackColor);
 }
 
 .react {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #06c2f1;
 }
 
 .react .progressreact .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #06c2f1;
     display: flex;
@@ -1073,7 +1073,7 @@ ul li a:hover::after {
 }
 
 .next {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid var(--blackColor);
 }
@@ -1147,20 +1147,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.spring .progressSpring .progressInside {
-    width: 69%;
+    inline-size: 69%;
     color: var(--blackColor);
 }
 
 .docker {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #086dd7;
 }
 
 .docker .progressDocker .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #086dd7;
     display: flex;
@@ -1173,20 +1173,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.docker .progressDocker .progressInside {
-    width: 72%;
+    inline-size: 72%;
     color: var(--blackColor);
 }
 
 .igniter {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #ee4323;
 }
 
 .igniter .progressCode .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #ee4323;
     display: flex;
@@ -1199,20 +1199,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.igniter .progressCode .progressInside {
-    width: 28%;
+    inline-size: 28%;
     color: var(--blackColor);
 }
 
 .adobe {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #470137;
 }
 
 .adobe .progressAdobe .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #470137;
     display: flex;
@@ -1225,20 +1225,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.adobe .progressAdobe .progressInside {
-    width: 97%;
+    inline-size: 97%;
     color: var(--whiteColor);
 }
 
 .figma {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #a259ff;
 }
 
 .figma .progressFigma .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #a259ff;
     display: flex;
@@ -1251,20 +1251,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.figma .progressFigma .progressInside {
-    width: 97%;
+    inline-size: 97%;
     color: var(--blackColor);
 }
 
 .symp {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid var(--blackColor);
 }
 
 .symp .progressSymp .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: var(--blackColor);
     display: flex;
@@ -1277,20 +1277,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.symp .progressSymp .progressInside {
-    width: 23%;
+    inline-size: 23%;
     color: var(--whiteColor);
 }
 
 .graphql {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #e435aa;
 }
 
 .graphql .progressGraphql .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #e435aa;
     display: flex;
@@ -1303,20 +1303,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.graphql .progressGraphql .progressInside {
-    width: 46%;
+    inline-size: 46%;
     color: var(--whiteColor);
 }
 
 .sql {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #005e86;
 }
 
 .sql .progressSql .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #005e86;
     display: flex;
@@ -1329,20 +1329,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.sql .progressSql .progressInside {
-    width: 92%;
+    inline-size: 92%;
     color: var(--whiteColor);
 }
 
 .c {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #00599d;
 }
 
 .c .progressC .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #00599d;
     display: flex;
@@ -1355,20 +1355,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.c .progressC .progressInside {
-    width: 50%;
+    inline-size: 50%;
     color: var(--whiteColor);
 }
 
 .uml {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #971f42;
 }
 
 .uml .progressUml .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #971f42;
     display: flex;
@@ -1381,20 +1381,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.uml .progressUml .progressInside {
-    width: 96%;
+    inline-size: 96%;
     color: var(--blackColor);
 }
 
 .trello {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #0079bf;
 }
 
 .trello .progressTrello .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #0079bf;
     display: flex;
@@ -1407,20 +1407,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.trello .progressTrello .progressInside {
-    width: 80%;
+    inline-size: 80%;
     color: var(--blackColor);
 }
 
 .scra {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #faa31c;
 }
 
 .scra .progressScratch .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #faa31c;
     display: flex;
@@ -1433,20 +1433,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.scra .progressScratch .progressInside {
-    width: 15%;
+    inline-size: 15%;
     color: var(--blackColor);
 }
 
 .ionic {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #1c6cff;
 }
 
 .ionic .progressIonic .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #1c6cff;
     display: flex;
@@ -1459,20 +1459,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.ionic .progressIonic .progressInside {
-    width: 88%;
+    inline-size: 88%;
     color: var(--blackColor);
 }
 
 .flutter {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #12a3df;
 }
 
 .flutter .progressFlutter .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #12a3df;
     display: flex;
@@ -1485,20 +1485,20 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.flutter .progressFlutter .progressInside {
-    width: 35%;
+    inline-size: 35%;
     color: var(--blackColor);
 }
 
 .gant {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #ffbe00;
 }
 
 .gant .progressGant .progressInside {
     position: absolute;
-    width: 0%;
-    height: 100%;
+    inline-size: 0%;
+    block-size: 100%;
     text-align: center;
     background-color: #ffbe00;
     display: flex;
@@ -1511,12 +1511,12 @@ ul li a:hover::after {
 }
 
 .innerblocCompetence:hover.gant .progressGant .progressInside {
-    width: 90%;
+    inline-size: 90%;
     color: var(--blackColor);
 }
 
 .jira {
-    width: 20%;
+    inline-size: 20%;
     border-radius: 10px;
     border: 3px solid #1570eb;
 }
@@ -1775,13 +1775,13 @@ ul li a:hover::after {
     color: var(--blackColor);
 }
 
-@media (max-width: 800px) {
+@media (max-inline-size: 800px) {
     .innerblocCompetence {
         inline-size: 30% !important;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-inline-size: 500px) {
     .innerblocCompetence {
         inline-size: 100% !important;
         padding: auto 1em;
@@ -1956,8 +1956,8 @@ ul li a:hover::after {
 }
 
 .captureQuizz {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     border-radius: 10px;
     background: url(../img/images/captures/quizz.png) center no-repeat;
     background-size: cover;
@@ -1968,8 +1968,8 @@ ul li a:hover::after {
 }
 
 .captureMichel {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     border-radius: 10px;
     background: url(../img/images/captures/michelado.png) center no-repeat;
     background-size: cover;
@@ -1980,8 +1980,8 @@ ul li a:hover::after {
 }
 
 .capturecos {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     border-radius: 10px;
     background: url(../img/images/captures/designCosmetique.png) center no-repeat;
     background-size: cover;
@@ -1992,8 +1992,8 @@ ul li a:hover::after {
 }
 
 .paraine {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     border-radius: 10px;
     background: url(../img/images/captures/parrainage.png) center no-repeat;
     background-size: cover;
@@ -2004,8 +2004,8 @@ ul li a:hover::after {
 }
 
 .plat {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     border-radius: 10px;
     background: url(../img/images/captures/platine.png) center no-repeat;
     background-size: cover;
@@ -2016,8 +2016,8 @@ ul li a:hover::after {
 }
 
 .game {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     border-radius: 10px;
     background: url(../img/images/captures/gamingZone.png) center no-repeat;
     background-size: cover;
@@ -2028,8 +2028,8 @@ ul li a:hover::after {
 }
 
 .landing {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     border-radius: 10px;
     background: url(../img/images/captures/landingPage.png) center no-repeat;
     background-size: cover;
@@ -2040,8 +2040,8 @@ ul li a:hover::after {
 }
 
 .giannny {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     border-radius: 10px;
     background: url(../img/images/captures/gianny.png) center no-repeat;
     background-size: cover;
@@ -2057,8 +2057,8 @@ ul li a:hover::after {
     left: auto;
     right: 0;
     bottom: auto;
-    width: 100%;
-    height: 0%;
+    inline-size: 100%;
+    block-size: 0%;
     background-color: var(--bgColorOpacity);
     border-radius: 10px;
     cursor: pointer;
@@ -2092,7 +2092,7 @@ ul li a:hover::after {
 }
 
 .rowRealisations-item:hover .informationCapture {
-    height: 100%;
+    block-size: 100%;
     z-index: 1000;
 }
 
@@ -2117,21 +2117,21 @@ ul li a:hover::after {
 
 /* references  */
 .references {
-    width: 100%;
-    height: auto;
+    inline-size: 100%;
+    block-size: auto;
     background-color: var(--sectionParcoursColor);
 }
 
 .innerReferences {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     background: url(../img/images/polygone.svg);
     padding-top: 3em;
     padding-bottom: 3em;
 }
 
 .innerReferences .container h3 {
-    margin-bottom: 3em;
+    margin-block-end: 3em;
 }
 
 .referencesCards {
@@ -2140,14 +2140,14 @@ ul li a:hover::after {
     justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 1em;
-    width: 100%;
+    inline-size: 100%;
 }
 
 .card {
-    width: 20%;
+    inline-size: 20%;
     border: 3px solid var(--orangeColor);
     border-radius: 10px;
-    height: auto;
+    block-size: auto;
     padding: 1em;
     display: flex;
     flex-direction: column;
@@ -2164,8 +2164,8 @@ ul li a:hover::after {
 }
 
 .card .imageUser {
-    width: 100%;
-    height: 300px;
+    inline-size: 100%;
+    block-size: 300px;
     position: relative;
     box-sizing: border-box;
     border-radius: 8px;
@@ -2173,7 +2173,7 @@ ul li a:hover::after {
 }
 
 .card .imageUser img {
-    width: 100%;
+    inline-size: 100%;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -2186,10 +2186,10 @@ ul li a:hover::after {
 
 /* contact  */
 .contact {
-    width: 100%;
+    inline-size: 100%;
     padding-top: 3em;
     padding-bottom: 3em;
-    height: auto;
+    block-size: auto;
     background: var(--bgColor);
 }
 
@@ -2197,32 +2197,32 @@ ul li a:hover::after {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 100%;
+    inline-size: 100%;
 }
 
 form {
-    width: 40%;
-    height: auto;
+    inline-size: 40%;
+    block-size: auto;
     border: 3px solid var(--orangeColor);
     border-radius: 8px;
     padding: 1em;
 }
 
-@media (max-width: 1000px) {
+@media (max-inline-size: 1000px) {
     form {
-        width: 50%;
+        inline-size: 50%;
     }
 
     .infoPersonnelle {
-        width: 50%;
+        inline-size: 50%;
     }
 
     .innerDescription .reseauxSociaux {
-        width: 100%;
+        inline-size: 100%;
     }
 }
 
-@media (max-width: 800px) {
+@media (max-inline-size: 800px) {
 
     .innerContact {
         flex-direction: column;
@@ -2230,20 +2230,20 @@ form {
     }
 
     form {
-        width: 100%;
+        inline-size: 100%;
     }
 
     .infoPersonnelle {
-        width: 100% !important;
+        inline-size: 100% !important;
     }
 
     .innerDescription .reseauxSociaux {
-        width: 50%;
+        inline-size: 50%;
     }
 }
 
 .input-group {
-    width: 100%;
+    inline-size: 100%;
     display: flex;
     flex-direction: column;
     /* flex-wrap: wrap; */
@@ -2252,13 +2252,13 @@ form {
 }
 
 .rowForm {
-    width: 100%;
+    inline-size: 100%;
     display: flex;
     justify-content: space-between;
 }
 
 .input-group input {
-    width: 45%;
+    inline-size: 45%;
     padding-top: 1em;
     padding-bottom: 1em;
     padding-left: 1em;
@@ -2277,7 +2277,7 @@ textarea {
 .objet,
 textarea,
 .btnSubmit {
-    width: 100% !important;
+    inline-size: 100% !important;
 }
 
 textarea {
@@ -2306,8 +2306,8 @@ textarea {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 20px;
-    height: 20px;
+    inline-size: 20px;
+    block-size: 20px;
     margin-top: -10px;
     margin-left: -10px;
     border: 2px solid rgba(255, 255, 255, 0.6);
@@ -2337,7 +2337,7 @@ textarea {
 
 .infoPersonnelle {
     text-align: left;
-    width: 40%;
+    inline-size: 40%;
 }
 
 .infoPersonnelle h4 {
@@ -2357,14 +2357,14 @@ textarea {
 
 /* footer  */
 .footer {
-    width: 100%;
+    inline-size: 100%;
     background-color: var(--sectionParcoursColor);
-    height: auto;
+    block-size: auto;
     padding: 2em auto;
 }
 
 .innerFooter {
-    width: 100%;
+    inline-size: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -2374,27 +2374,27 @@ textarea {
 
 /* responsive  */
 
-@media (max-width: 1600px) {
+@media (max-inline-size: 1600px) {
     .reseauxSociaux {
-        width: 60%;
+        inline-size: 60%;
     }
 }
 
-@media (max-width: 1300px) {
+@media (max-inline-size: 1300px) {
     .reseauxSociaux {
-        width: 75%;
+        inline-size: 75%;
     }
 }
 
-@media (max-width: 1100px) {
+@media (max-inline-size: 1100px) {
     .header-body .container .rowRealisations .rowRealisations-item {
-        width: 100%;
+        inline-size: 100%;
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-inline-size: 1200px) {
     .navheader .container .row .links {
-        width: 70%;
+        inline-size: 70%;
     }
 
     .description {
@@ -2402,47 +2402,47 @@ textarea {
     }
 
     .innerDescription {
-        width: 100%;
+        inline-size: 100%;
     }
 
     .card {
-        width: 30%;
+        inline-size: 30%;
     }
 }
 
-@media (max-width: 900px) {
+@media (max-inline-size: 900px) {
 
     .card {
-        width: 50%;
+        inline-size: 50%;
     }
 }
 
-@media (max-width: 700px) {
+@media (max-inline-size: 700px) {
 
     .card {
-        width: 80%;
+        inline-size: 80%;
     }
 }
 
-@media (max-width: 400px) {
+@media (max-inline-size: 400px) {
 
     .card {
-        width: 100%;
+        inline-size: 100%;
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-inline-size: 1000px) {
     .navheader .container .row .links {
-        width: 80%;
+        inline-size: 80%;
     }
 
     .rowPresentation {
         flex-direction: column;
-        width: 100%;
+        inline-size: 100%;
     }
 
     .innerDescription {
-        width: 100% !important;
+        inline-size: 100% !important;
     }
 
     .innerImage {
@@ -2450,18 +2450,18 @@ textarea {
     }
 
     .reseauxSociaux {
-        width: 50%;
+        inline-size: 50%;
     }
 }
 
-@media (max-width: 800px) {
+@media (max-inline-size: 800px) {
     .navheader .container .row .links ul .linklinks {
         display: none;
     }
 
     .navheader .container .row .links ul {
         float: right;
-        width: auto;
+        inline-size: auto;
     }
 
     .navheader .container .row .links .linklinks {
@@ -2471,17 +2471,17 @@ textarea {
     .menuIcon {
         border: 2px solid white;
         display: flex;
-        float: right;
+        float: inline-end;
     }
 }
 
-@media (max-width: 800px) {
+@media (max-inline-size: 800px) {
     .reseauxSociaux {
-        width: 70%;
+        inline-size: 70%;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-inline-size: 500px) {
     /* .innerDescription { */
     /* border: 3px solid red; */
     /* } */
@@ -2499,12 +2499,12 @@ textarea {
     }
 
     .reseauxSociaux {
-        width: 100% !important;
+        inline-size: 100% !important;
     }
 
     .reseauxSociaux div {
-        width: 40px;
-        height: 40px;
+        inline-size: 40px;
+        block-size: 40px;
     }
 
     .buttonCV {
@@ -2512,15 +2512,14 @@ textarea {
     }
 
     .rowPresentation .innerImage {
-        /* width: 40%; */
-        height: 450px !important;
-        width: 100% !important;
+        block-size: 450px !important;
+        inline-size: 100% !important;
         margin-top: 1em;
         display: none;
     }
 
     .rowPresentation .innerImage img {
-        height: 100%;
+        block-size: 100%;
         object-fit: cover;
     }
 }
