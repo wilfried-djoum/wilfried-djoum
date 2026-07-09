@@ -2,7 +2,7 @@
 I’m currently working on personal and academic web development projects using modern frameworks (React; NodeJs; Angular; NextJs).<br><br> I’m looking to collaborate on web applications, open-source projects, and innovative tech ideas.<br><br> I’m looking for help with improving application architecture, performance optimization, and best development practices.<br><br> I’m currently learning advanced JavaScript, software architecture, and cloud fundamentals.<br><br> Ask me about web development, software engineering, GitHub projects, or tech in general.<br><br> Fun fact: I like turning ideas into real applications and I’m known for bringing good vibes to the team lol <br> <br> I'm working on a flexOffice app and i hope pouvoir le host </br>
 
 
-## Socials:
+## Socials Media:
 [![Discord](https://img.shields.io/badge/Discord-%237289DA.svg?logo=discord&logoColor=white)](https://discord.gg/willpopler) [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/will_insta237) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/wilfrieddjoum) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:wilfrieddjoum@gmail.com) 
 
 # Tech Stack:
