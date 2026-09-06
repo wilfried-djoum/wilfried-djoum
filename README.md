@@ -1,5 +1,5 @@
 # About Me :
-I’m currently working on personal and academic web development projects using modern frameworks (React; NodeJs; NestJs; NextJs).<br><br> I’m looking to collaborate on web applications, open-source projects, and innovative tech ideas.<br><br> I’m looking for help with improving application architecture, performance optimization, and best development practices.<br> <br> I’m currently learning advanced JavaScript, software architecture , and cloud  fundamentals. <br><br> Ask me about web development, software engineering, GitHub project, or tech in general. <br>
+I’m currently working on personal and academic web development projects using modern frameworks (React; NodeJs; NestJs; NextJs).<br><br> I’m looking to collaborate on web applications, open-source projects, and innovative tech ideas.<br><br> I’m looking for help with improving application architecture, performance optimization, and best development practices. <br> <br> I’m currently learning advanced JavaScript, software architecture , and cloud  fundamentals. <br><br> Ask me about web development, software engineering, GitHub project, or tech in general. <br>
 
 
 ## Socials Media:
